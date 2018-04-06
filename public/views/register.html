@@ -1,0 +1,68 @@
+<!-- <div ng-controller="regCntrl"> -->
+        
+        
+        <div class="wrapper">
+
+            <div class="content">
+
+                <form name="userForm" ng-submit="submitForm(user)" novalidate>
+
+                    <h2 class="form-signin-heading">User Registration Form</h2>
+                    <br><br>
+
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" name="username" ng-model="user.username" ng-required="true" />
+                    <div class="errorMessage" ng-messages="userForm.username.$dirty && userForm.username.$error">
+                        <!-- <div ng-message='required'>Username is required</div> -->
+                    </div>
+
+                    <label for="passoword">Password</label>
+                    <input type="password" placeholder="Password" name="password" ng-model="user.password" ng-minlength="3" ng-maxlength="10"
+                        ng-required="true" />
+                    <div class="errorMessage" ng-messages="userForm.password.$dirty && userForm.password.$error">
+                        <div ng-message='required'>Password is required</div>
+                        <div ng-message='minlength'>Please provide password longer than 3 characters</div>
+                        <div ng-message='maxlength'>Password cannot be longer than 10 characters</div>
+                    </div>
+
+                    <label>Email
+                    <input type="email" placeholder="Email" name="email" ng-model="user.email" ng-required="true" /></label>
+                    <div class="errorMessage" ng-messages="userForm.email.$dirty && userForm.email.$error">
+                        <div ng-message='required'>Email is required</div>
+                        <div ng-message="email">Your email address is invalid</div>
+                    </div>
+
+                    <label for="location">Location</label>
+                    <input type="text" placeholder="Location" name="username" ng-model="user.location" ng-required="true" />
+                    <div class="errorMessage" ng-messages="userForm.location.$dirty && userForm.location.$error">
+                        <div ng-message='required'>Location is required</div>
+                    </div>
+
+                    <label for="phone">Phone</label>
+                    <input type="number" placeholder="Phone" name="phone" ng-model="user.phone" ng-minlength="5" ng-maxlength="10"
+                        ng-required="true" />
+                    <div class="errorMessage" ng-messages="userForm.phone.$dirty && userForm.phone.$error">
+                        <div ng-message='required'>Phone is required</div>
+                        <div ng-message='minlength'>Phone number cannot be less than 10 digits</div>
+                        <div ng-message='maxlength'>Phone number cannot be more than 10 digits</div>
+                    </div>
+
+                    <!-- <label for="type">Type</label> -->
+                    <label>
+                    Company
+                    <input type="radio"   ng-model="user.type" value="company" ng-required="true" />
+                    </label>
+                    <label>
+                    Job Seeker
+                    <input type="radio"   ng-model="user.type" value="jobSeeker" ng-required="true" />
+                    </label>
+                    <div class="errorMessage" ng-messages="userForm.type.$dirty && userForm.type.$error">
+                        <div ng-message='required'>Type is required</div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" />
+
+                </form>
+            </div>
+        </div>
+    <!-- </div> -->

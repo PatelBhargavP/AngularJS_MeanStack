@@ -1,0 +1,33 @@
+<!-- <div ng-controller="searchCntrl"> -->
+    <div class="wrapper">
+        <div class="content">
+            <form id="title" name="searchTitle" ng-submit="byTitle(search_title)" novalidate>
+                <label for="search_title">Enter Title</label>
+                <input type="text" placeholder="Enter the title here..." name="search_title" ng-model="search_title" ng-required="true" />
+                <div class="errorMessage" ng-messages="searchTitle.search_title.$dirty && searchTitle.search_title.$error">
+                    <div ng-message='required'>Title is required</div>
+                </div>
+                <input type="submit" class="btn btn-primary" ng-disabled="searchTitle.$invalid" value="Search by Title" />
+            </form>
+            <form id="loc" name="searchLocation" ng-submit="byLocation(search_location)" novalidate>
+                <label for="search_location">Enter Location</label>
+                <input type="text" placeholder="Enter the location here..." name="search_location" ng-model="search_location" ng-required="true" />
+                <div class="errorMessage" ng-messages="searchLocation.search_location.$dirty && searchLocation.search_location.$error">
+                    <div ng-message='required'>Location is required</div>
+                </div>
+                <input type="submit" class="btn btn-primary" ng-disabled="searchLocation.$invalid" value="Search by Location" />
+            </form>
+            <form id="keyword" name="searchKey" ng-submit="byKey(search_key)" novalidate>
+                <label for="search_key">Enter Keywords</label>
+                <label for="keywords" style="font-size: 11px;">(use ',' for saperation)</label>
+                <input type="text" placeholder="Enter the keywords here..." name="search_key" ng-model="search_key" ng-required="true" />
+                <div class="errorMessage" ng-messages="searchKey.search_key.$dirty && searchKey.search_key.$error">
+                    <div ng-message='required'>Keywords are required</div>
+                </div>
+                <input type="submit" class="btn btn-primary" ng-disabled="searchKey.$invalid" value="Search by Keywords" />
+            </form>
+            <button class="btn btn-primary" ng-click="deleteAll()">Reset Everything</button>
+        </div>
+        <search-results></search-results>
+    </div>
+<!-- </div> -->

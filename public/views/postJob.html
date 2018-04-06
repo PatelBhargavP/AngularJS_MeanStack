@@ -1,0 +1,45 @@
+<!-- <div ng-controller="postCntrl"> -->
+<div class="wrapper">
+
+    <div class="content">
+
+        <form id="jobForm" name="newJob" ng-submit="postJob(job)" novalidate>
+
+            <h2 class="form-signin-heading">Post Job</h2>
+            <br>
+            <br>
+
+            <label for="title">Title</label>
+            <input type="text" placeholder="Title" name="title" ng-model="job.title" ng-required="true" />
+            <div class="errorMessage" ng-messages="newJob.title.$dirty && newJob.title.$error">
+                <div ng-message='required'>Title is required</div>
+            </div>
+
+            <label for="desc">Discription</label>
+            <textarea type="text" class="form-control" placeholder="Enter your discription here..." row="10" name="desc" ng-model="job.desc"
+                value="" ng-required="true"></textarea>
+            <div class="errorMessage" ng-messages="newJob.desc.$dirty && newJob.desc.$error">
+                <div ng-message='required'>Discription is required</div>
+            </div>
+            <br>
+
+            <label for="keywords">Keywords</label>
+            <label for="keywords" style="font-size: 11px;">(use ',' for saperation)</label>
+            <input type="text" placeholder="Keywords" name="keywords" ng-model="job.keywords" ng-required="true" />
+            <div class="errorMessage" ng-messages="newJob.keywords.$dirty && newJob.keywords.$error">
+                <div ng-message='required'>Keywords are required</div>
+            </div>
+
+            <label for="location">Location</label>
+            <input type="text" placeholder="Location" name="location" ng-model="job.location" ng-required="true" />
+            <div class="errorMessage" ng-messages="newJob.location.$dirty && newJob.location.$error">
+                <div ng-message='required'>Location is required</div>
+            </div>
+
+
+            <input type="submit" class="btn btn-primary" ng-disabled="newJob.$invalid" value="Save" />
+
+        </form>
+    </div>
+</div>
+<!-- </div> -->

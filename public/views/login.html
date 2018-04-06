@@ -1,0 +1,26 @@
+<!-- <div ng-controller="logInCntrl"> -->
+<div class="wrapper">
+  <div class="content">
+    <form name="logInForm" ng-submit="logInFn(cred)" novalidate>
+      <h2 class="form-signin-heading">Please login</h2>
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" name="username" ng-model="cred.username" ng-required="true" />
+      <div class="errorMessage" ng-messages="logInForm.username.$dirty && logInForm.username.$error">
+        <div ng-message='required'>Username is required</div>
+      </div>
+
+      <label for="username">Password</label>
+      <input type="password" placeholder="Password" name="username" ng-model="cred.password" ng-required="true" />
+      <div class="errorMessage" ng-messages="logInForm.password.$dirty && logInForm.password.$error">
+        <div ng-message='required'>Password is required</div>
+      </div>
+
+      <input type="submit" value="logIn" class="btn btn-primary" ng-disabled="logInForm.$invalid" />
+      <p></p>
+      <a href="#/register">
+        <button class="btn btn-primary">Register as new user</button>
+      </a>
+    </form>
+  </div>
+</div>
+<!-- </div> -->

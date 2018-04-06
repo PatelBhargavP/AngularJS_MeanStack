@@ -1,0 +1,11 @@
+<div ng-repeat="result in results" class="panel panel-default">
+    <div class="panel-heading">
+        <label> Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;: </label>{{result.title}}<br>
+        <label> Location &nbsp;&nbsp;: </label>{{result.location}}<br>
+        <label> Keywords : </label><span ng-repeat="keyword in result.keywords">{{keyword}},</span>
+    </div>
+    <div class="panel-body">
+        <h4></h4>
+        <p >{{result.desc}}</p>
+    </div>
+</div>
